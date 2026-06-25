@@ -1,2 +1,2 @@
 # discover
-Serenity Summit Guest Resources
+Discover Serenity Summit
