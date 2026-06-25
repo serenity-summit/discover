@@ -1,1 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discover Serenity Summit</title>
+  <style>
+    :root {
+      --green: #0b6f16;
+      --dark: #222;
+      --cream: #eee5ca;
+      --parchment: #f7f0dc;
+      --gold: #d89a21;
+    }
 
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--dark);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.65), rgba(255,255,255,.05)),
+        linear-gradient(145deg, #efe3c4, #f9f3e3);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 28px 20px 44px;
+      text-align: center;
+    }
+
+    .hero {
+      border: 2px solid rgba(11,111,22,.25);
+      border-radius: 28px;
+      padding: 34px 22px;
+      background: rgba(255,255,255,.38);
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+    }
+
+    .mountain { font-size: 42px; margin-bottom: 8px; }
+
+    h1 {
+      margin: 0;
+      color: var(--green);
+      font-size: 2.6rem;
+      line-height: .95;
+    }
+
+    .tagline {
+      margin: 14px 0 26px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      line-height: 1.45;
+      margin: 0 auto 26px;
+      max-width: 360px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      color: var(--dark);
+      background: var(--parchment);
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 18px;
+      padding: 18px;
+      font-size: 1.15rem;
+      box-shadow: 0 5px 14px rgba(0,0,0,.08);
+    }
+
+    .card span {
+      display: block;
+      font-size: .86rem;
+      margin-top: 4px;
+      color: #555;
+      font-family: system-ui, sans-serif;
+    }
+
+    footer {
+      margin-top: 28px;
+      font-size: .78rem;
+      color: #666;
+      font-family: system-ui, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="mountain">🏔️</div>
+
+      <h1>Serenity<br>Summit</h1>
+
+      <div class="tagline">Escape • Unwind • Renew</div>
+
+      <p class="intro">
+        Discover games, challenges, and little extras to enjoy during your stay.
+      </p>
+
+      <div class="grid">
+        <a class="card" href="#cornhole">🌽 Cornhole<span>Keep score and play to 21</span></a>
+        <a class="card" href="#putting">⛳ Summit Links<span>Putting challenge scorecard</span></a>
+        <a class="card" href="#disc-golf">🥏 Disc Golf<span>Track your mountain round</span></a>
+        <a class="card" href="#ladder-toss">🎯 Ladder Toss<span>Fast, simple scorekeeping</span></a>
+      </div>
+    </section>
+
+    <footer>
+      Discover Serenity Summit · Banner Elk, NC
+    </footer>
+  </main>
+</body>
+</html>
