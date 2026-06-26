@@ -45,9 +45,106 @@ footer{margin-top:26px;font:12px system-ui;color:#666}
 </div>
 
 <div class="card" id="scorekeeper">
-<h2>Scorekeeper Coming Soon</h2>
-<p>The scorekeeper will live here next. For now, congratulations: you found the future.</p>
+  <h2>Play & Keep Score</h2>
+
+  <div class="scoreboard">
+    <div class="team">
+      <h3>Summer</h3>
+      <div id="scoreA" class="score">0</div>
+      <button onclick="addScore('A',1)">+1</button>
+      <button onclick="addScore('A',3)">+3</button>
+      <button onclick="addScore('A',-1)">−1</button>
+    </div>
+
+    <div class="team">
+      <h3>Autumn</h3>
+      <div id="scoreB" class="score">0</div>
+      <button onclick="addScore('B',1)">+1</button>
+      <button onclick="addScore('B',3)">+3</button>
+      <button onclick="addScore('B',-1)">−1</button>
+    </div>
+  </div>
+
+  <div id="winner" class="winner"></div>
+
+  <button class="reset" onclick="resetGame()">Reset Game</button>
 </div>
+
+<style>
+.scoreboard{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:12px;
+}
+.team{
+  text-align:center;
+  background:rgba(255,255,255,.45);
+  border-radius:16px;
+  padding:14px 10px;
+}
+.team h3{
+  margin:0 0 8px;
+  color:var(--green);
+}
+.score{
+  font-size:3.2rem;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+button{
+  border:0;
+  border-radius:12px;
+  padding:10px 12px;
+  margin:4px;
+  background:var(--green);
+  color:white;
+  font-weight:bold;
+  font-size:1rem;
+}
+.reset{
+  width:100%;
+  margin-top:18px;
+  background:#444;
+}
+.winner{
+  margin-top:14px;
+  font-weight:bold;
+  color:var(--gold);
+  text-align:center;
+  font-size:1.2rem;
+}
+</style>
+
+<script>
+let scores = { A: 0, B: 0 };
+
+function addScore(team, points) {
+  scores[team] += points;
+  if (scores[team] < 0) scores[team] = 0;
+  updateScores();
+}
+
+function updateScores() {
+  document.getElementById("scoreA").textContent = scores.A;
+  document.getElementById("scoreB").textContent = scores.B;
+
+  const winner = document.getElementById("winner");
+
+  if (scores.A >= 21 && scores.A > scores.B) {
+    winner.textContent = "🏆 Summer wins!";
+  } else if (scores.B >= 21 && scores.B > scores.A) {
+    winner.textContent = "🏆 Autumn wins!";
+  } else {
+    winner.textContent = "";
+  }
+}
+
+function resetGame() {
+  scores = { A: 0, B: 0 };
+  updateScores();
+}
+</script>
 
 </section>
 
