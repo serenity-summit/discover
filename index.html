@@ -20,21 +20,24 @@ body{
 }
 .page{max-width:560px;margin:auto;min-height:100vh}
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-    text-align: center;
-    padding: 22px 18px 18px;
+  text-align: center;
+  padding: 22px 18px 18px;
 
-    background-image:
-        linear-gradient(rgba(255,255,255,.28), rgba(255,255,255,.28)),
-url("./images/header-parchment.jpg")
-    background-size: cover;
-    background-position: center;
+  background-color: #f7f0dc;
+  background-image:
+    linear-gradient(rgba(247,240,220,.18), rgba(247,240,220,.18)),
+    url("./images/header-parchment.jpg");
 
-    border-bottom: 1px solid rgba(0,0,0,.12);
-    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  box-shadow: 0 2px 12px rgba(0,0,0,.10);
 }
 .mark{font-size:34px;line-height:1}
 h1{margin:4px 0 2px;color:var(--green);font-size:2.2rem;line-height:1}
