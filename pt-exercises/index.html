@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17324d">
+  <meta name="description" content="A compact, offline-friendly exercise guide for the P4 home exercise program.">
+  <title>P4 Exercises</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">HOME EXERCISE PROGRAM</p>
+        <h1>P4 Exercises</h1>
+      </div>
+      <button class="collapse-all" id="collapseAll" type="button" hidden>Collapse</button>
+    </header>
+    <p class="intro">Tap an exercise to expand it. Only one stays open.</p>
+    <section class="exercise-list" id="exerciseList" aria-label="Exercise list"></section>
+    <footer>Based on the supplied four-page handout. Follow your physical therapist's instructions if they differ.</footer>
+  </main>
+  <script src="./app.js" defer></script>
+</body>
+</html>

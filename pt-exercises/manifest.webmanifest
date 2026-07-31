@@ -1,0 +1,23 @@
+{
+  "name": "P4 Exercise Guide",
+  "short_name": "P4 Exercises",
+  "description": "Mobile home exercise guide extracted from the supplied P4 handout.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#17324d",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
