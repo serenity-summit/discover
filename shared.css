@@ -36,8 +36,7 @@ body{
 .back{
   position:absolute;
   left:14px;
-  top:50%;
-  transform:translateY(-50%);
+  top:14px;
   font-family:system-ui,sans-serif;
   font-size:.9rem;
   font-weight:600;
