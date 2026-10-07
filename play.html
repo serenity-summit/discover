@@ -11,9 +11,7 @@
 .acc-head .chev{width:.65rem;height:.65rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;flex:none;margin-left:12px}
 .acc-head[aria-expanded="true"] .chev{transform:rotate(225deg)}
 .acc-body{padding:2px 18px 18px}
-.acc-head-photo{flex-direction:column;align-items:stretch;padding:0}
-.acc-head-photo img{display:block;width:100%;height:160px;object-fit:cover}
-.acc-head-row{display:flex;justify-content:space-between;align-items:center;width:100%;padding:18px}
+.acc-photo{display:block;width:100%;height:160px;object-fit:cover;cursor:pointer}
 .acc-body h2{margin:14px 0 8px;font-family:Georgia,serif;font-size:1.06rem;color:var(--green)}
 .acc-body h2:first-child{margin-top:2px}
 .acc-body p{margin:0 0 .6rem;line-height:1.45;font-size:.95rem}
@@ -97,7 +95,7 @@
     </section>
 
     <section class="card acc">
-      <button class="acc-head acc-head-photo" aria-expanded="false" aria-controls="acc-boardgames"><img src="guest-guide/assets/games.jpg" alt="Assortment of board and card games at the cabin"><span class="acc-head-row"><span>Board Games</span><span class="chev" aria-hidden="true"></span></span></button>
+      <img class="acc-photo" src="guest-guide/assets/games.jpg" alt="Assortment of board and card games at the cabin" data-acc-target="acc-boardgames"><button class="acc-head" aria-expanded="false" aria-controls="acc-boardgames"><span>Board Games</span><span class="chev" aria-hidden="true"></span></button>
       <div class="acc-body" id="acc-boardgames" hidden>
         <h2>What We Have</h2>
         <p>An assortment of board and card games is provided on both the main and lower levels &mdash; something for all ages, from quick card games to longer strategy nights.</p>
@@ -113,6 +111,11 @@
 </div>
 
 <script>
+document.querySelectorAll('.acc-photo').forEach(function(img){
+  img.addEventListener('click', function(){
+    document.querySelector('[aria-controls="' + img.getAttribute('data-acc-target') + '"]').click();
+  });
+});
 document.querySelectorAll('.acc-head').forEach(function(btn){
   btn.addEventListener('click', function(){
     var willOpen = btn.getAttribute('aria-expanded') !== 'true';
