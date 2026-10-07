@@ -87,6 +87,8 @@ h1{margin:4px 0 2px;color:var(--green);font-size:2.2rem;line-height:1}
   color:var(--green);
 }
 .grid{display:grid;gap:14px}
+/* Vertical card stack for sub-pages (game detail, info pages) — same 14px rhythm as .grid */
+.stack{display:grid;gap:14px}
 .card{
   display:block;
   text-decoration:none;
