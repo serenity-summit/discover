@@ -35,7 +35,7 @@ search.addEventListener('input',()=>{
   sections.forEach(section=>{
     const match=!q||section.textContent.toLowerCase().includes(q);
     section.classList.toggle('search-hidden',!match);
-    if(match){shown++; if(q)setExpanded(section.querySelector('.section-heading'),true);}
+    if(match){shown++;}
   });
   noResults.hidden=shown!==0;
 });
