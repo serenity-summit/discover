@@ -12,17 +12,30 @@ function setExpanded(button,expanded){
   const content=document.getElementById(button.getAttribute('aria-controls'));
   content.hidden=!expanded;
 }
+function openOnly(button){
+  document.querySelectorAll('.section-heading').forEach(b=>setExpanded(b,false));
+  setExpanded(button,true);
+}
+const expandButton=document.getElementById('expand-all');
+let allExpanded=false;
+function resetExpandButton(){
+  allExpanded=false;
+  expandButton.textContent='Expand all';
+}
 document.querySelectorAll('.section-heading').forEach(button=>{
-  button.addEventListener('click',()=>setExpanded(button,button.getAttribute('aria-expanded')!=='true'));
+  button.addEventListener('click',()=>{
+    if(button.getAttribute('aria-expanded')==='true'){setExpanded(button,false);}
+    else{openOnly(button);}
+    resetExpandButton();
+  });
 });
 document.querySelectorAll('#toc a').forEach(link=>{
   link.addEventListener('click',()=>{
     const section=document.querySelector(link.getAttribute('href'));
-    setExpanded(section.querySelector('.section-heading'),true);
+    openOnly(section.querySelector('.section-heading'));
+    resetExpandButton();
   });
 });
-const expandButton=document.getElementById('expand-all');
-let allExpanded=false;
 expandButton.addEventListener('click',()=>{
   allExpanded=!allExpanded;
   sections.filter(s=>!s.classList.contains('search-hidden')).forEach(s=>setExpanded(s.querySelector('.section-heading'),allExpanded));
