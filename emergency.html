@@ -134,9 +134,15 @@
 <script>
 document.querySelectorAll('.acc-head').forEach(function(btn){
   btn.addEventListener('click', function(){
-    var open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!open));
-    document.getElementById(btn.getAttribute('aria-controls')).hidden = open;
+    var willOpen = btn.getAttribute('aria-expanded') !== 'true';
+    document.querySelectorAll('.acc-head').forEach(function(b){
+      b.setAttribute('aria-expanded', 'false');
+      document.getElementById(b.getAttribute('aria-controls')).hidden = true;
+    });
+    if (willOpen){
+      btn.setAttribute('aria-expanded', 'true');
+      document.getElementById(btn.getAttribute('aria-controls')).hidden = false;
+    }
   });
 });
 </script>
