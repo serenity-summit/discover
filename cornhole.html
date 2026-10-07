@@ -4,114 +4,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cornhole · Serenity Summit</title>
+<link rel="stylesheet" href="shared.css?v=2">
 <style>
-:root{--green:#0b6f16;--cream:#f7f0dc;--dark:#222}
-*{box-sizing:border-box}
-body{margin:0;font-family:Georgia,serif;background:linear-gradient(145deg,#efe3c4,#fbf6e8);color:var(--dark)}
-.page{max-width:520px;margin:auto;padding:24px 18px 40px;text-align:center}
-.back{display:block;text-align:left;color:var(--green);text-decoration:none;margin-bottom:16px}
-.hero{border:2px solid rgba(11,111,22,.22);border-radius:26px;padding:28px 20px;background:rgba(255,255,255,.42);box-shadow:0 12px 34px rgba(0,0,0,.12)}
-h1{margin:0;color:var(--green);font-size:2.4rem}
-.tag{letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;margin:10px 0 24px}
-.card{background:var(--cream);border:1px solid rgba(0,0,0,.14);border-radius:18px;margin:14px 0;padding:18px;text-align:left}
-.card h2{margin:0 0 8px;color:var(--green);font-size:1.25rem}
-.card p{margin:0;line-height:1.4}
-.button{display:block;margin-top:14px;text-align:center;background:var(--green);color:white;text-decoration:none;border-radius:14px;padding:14px;font-family:system-ui,sans-serif;font-weight:700}
-footer{margin-top:26px;font:12px system-ui;color:#666}
+.card h2{margin:0 0 8px;font-family:Georgia,serif;font-size:1.06rem;color:var(--green)}
+.card p{margin:0 0 .6rem;line-height:1.45;font-size:.95rem}
+.card p:last-child{margin-bottom:0}
+.scoreboard{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+.team{text-align:center;background:rgba(255,255,255,.5);border-radius:16px;padding:14px 10px}
+.team h3{margin:0 0 8px;color:var(--green)}
+.score{font-size:3.2rem;font-weight:700;margin-bottom:10px}
+.team button{border:0;border-radius:12px;padding:10px 12px;margin:4px;background:var(--green);color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+.reset{display:block;width:100%;margin-top:18px;border:0;border-radius:12px;padding:12px;background:#444;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+.winner{margin-top:14px;font-weight:700;color:var(--gold);text-align:center;font-size:1.2rem}
 </style>
 </head>
 <body>
-<main class="page">
-<a class="back" href="./">← Discover</a>
+<div class="page">
 
-<section class="hero">
-<h1>🌽 Cornhole</h1>
-<div class="tag">Toss • Laugh • Repeat</div>
+<header class="header">
+  <a class="back" href="play.html">‹ Other Games</a>
+  <img class="logo" src="images/Logo-Borderless-sm2.png" alt="Serenity Summit">
+  <img class="tagline-image" src="images/Tagline.png" alt="Escape • Unwind • Renew">
+</header>
+<div class="fade" aria-hidden="true"></div>
 
-<div class="card">
-<h2>Where to Find Equipment</h2>
-<p>The boards and bags are stored in the shed near the fire pit. Please return everything there when finished.</p>
-</div>
+<main class="content">
+  <p class="intro">Let's Play Cornhole!</p>
 
-<div class="card">
-<h2>Setup & Rules</h2>
-<p>Place the boards facing each other. Traditional distance is 27 feet from front edge to front edge, but mountain-house rules allow “close enough.” Play to 21.</p>
-</div>
+  <section class="card">
+    <h2>Where to Find Equipment</h2>
+    <p>The boards and bags are stored in the shed near the fire pit. Please return everything there when finished.</p>
+  </section>
 
-<div class="card" id="scorekeeper">
-  <h2>Play & Keep Score</h2>
-  <p class="score-intro">
-    Use the simple scorekeeper so nobody has to remember whether it was 14–11 or 14–12 after the last beverage.
-  </p>
+  <section class="card">
+    <h2>Setup &amp; Rules</h2>
+    <p>Place the boards facing each other. Traditional distance is 27 feet from front edge to front edge, but mountain-house rules allow &ldquo;close enough.&rdquo; Play to 21.</p>
+  </section>
 
-  <div class="scoreboard">
-    <div class="team">
-      <h3>Summer</h3>
-      <div id="scoreA" class="score">0</div>
-      <button onclick="addScore('A',1)">+1</button>
-      <button onclick="addScore('A',3)">+3</button>
-      <button onclick="addScore('A',-1)">−1</button>
+  <section class="card" id="scorekeeper">
+    <h2>Play &amp; Keep Score</h2>
+    <p>Use the simple scorekeeper so nobody has to remember whether it was 14&ndash;11 or 14&ndash;12 after the last beverage.</p>
+
+    <div class="scoreboard">
+      <div class="team">
+        <h3>Summer</h3>
+        <div id="scoreA" class="score">0</div>
+        <button onclick="addScore('A',1)">+1</button>
+        <button onclick="addScore('A',3)">+3</button>
+        <button onclick="addScore('A',-1)">&minus;1</button>
+      </div>
+
+      <div class="team">
+        <h3>Autumn</h3>
+        <div id="scoreB" class="score">0</div>
+        <button onclick="addScore('B',1)">+1</button>
+        <button onclick="addScore('B',3)">+3</button>
+        <button onclick="addScore('B',-1)">&minus;1</button>
+      </div>
     </div>
 
-    <div class="team">
-      <h3>Autumn</h3>
-      <div id="scoreB" class="score">0</div>
-      <button onclick="addScore('B',1)">+1</button>
-      <button onclick="addScore('B',3)">+3</button>
-      <button onclick="addScore('B',-1)">−1</button>
-    </div>
-  </div>
+    <div id="winner" class="winner"></div>
 
-  <div id="winner" class="winner"></div>
+    <button class="reset" onclick="resetGame()">Reset Game</button>
+  </section>
 
-  <button class="reset" onclick="resetGame()">Reset Game</button>
+</main>
+<div class="footer">Discover Serenity Summit · Banner Elk, NC</div>
+
 </div>
-
-<style>
-.scoreboard{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:12px;
-}
-.team{
-  text-align:center;
-  background:rgba(255,255,255,.45);
-  border-radius:16px;
-  padding:14px 10px;
-}
-.team h3{
-  margin:0 0 8px;
-  color:var(--green);
-}
-.score{
-  font-size:3.2rem;
-  font-weight:bold;
-  margin-bottom:10px;
-}
-button{
-  border:0;
-  border-radius:12px;
-  padding:10px 12px;
-  margin:4px;
-  background:var(--green);
-  color:white;
-  font-weight:bold;
-  font-size:1rem;
-}
-.reset{
-  width:100%;
-  margin-top:18px;
-  background:#444;
-}
-.winner{
-  margin-top:14px;
-  font-weight:bold;
-  color:var(--gold);
-  text-align:center;
-  font-size:1.2rem;
-}
-</style>
 
 <script>
 let scores = { A: 0, B: 0 };
@@ -143,9 +103,5 @@ function resetGame() {
 }
 </script>
 
-</section>
-
-<footer>Discover Serenity Summit · Banner Elk, NC</footer>
-</main>
 </body>
 </html>
