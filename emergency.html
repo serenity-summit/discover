@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Need Help | Serenity Summit</title>
+<link rel="stylesheet" href="shared.css?v=4">
+<style>
+.card.acc{padding:0;overflow:hidden}
+.acc-head{width:100%;display:flex;justify-content:space-between;align-items:center;text-align:left;padding:18px;border:0;background:transparent;font-family:Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--green);cursor:pointer}
+.acc-head .chev{width:.65rem;height:.65rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;flex:none;margin-left:12px}
+.acc-head[aria-expanded="true"] .chev{transform:rotate(225deg)}
+.acc-body{padding:2px 18px 18px}
+.contact{padding:12px 0;border-top:1px solid rgba(0,0,0,.1);font-family:system-ui,sans-serif}
+.contact:first-of-type{border-top:0;padding-top:2px}
+.contact:last-child{padding-bottom:0}
+.contact .name{font-weight:700}
+.contact a.tel{display:inline-block;margin-top:3px;font-weight:700;font-size:1.1rem;color:var(--green);text-decoration:none}
+.contact .addr{font-size:.9rem;color:#555;margin-top:2px}
+.contact .note{font-size:.9rem;color:#555;margin-top:4px;line-height:1.4}
+.alert-911{background:#fdf0ee;border-left:4px solid #a62f2f;border-radius:12px;padding:14px 16px;margin:0 0 14px;font-family:system-ui,sans-serif;line-height:1.45}
+.alert-911 a{color:#a62f2f;font-weight:700;text-decoration:none;font-size:1.1rem}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="header">
+  <a class="back" href="./">‹ Home</a>
+  <a class="logo-link" href="./" aria-label="Serenity Summit home"><img class="logo"
+       src="images/Logo-Borderless-sm2.png"
+       alt="Serenity Summit"></a>
+  <img class="tagline-image"
+       src="images/Tagline.png"
+       alt="Escape • Unwind • Renew">
+</header>
+<div class="fade" aria-hidden="true"></div>
+
+<main class="content">
+  <p class="intro">Help When You Need It</p>
+
+  <div class="alert-911">In an emergency, call <a href="tel:911">911</a> first — then use the numbers below as needed.</div>
+
+  <div class="stack">
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="true" aria-controls="acc-emergency"><span>Emergency &amp; Medical</span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-emergency">
+        <div class="contact">
+          <div class="name">Avery County Sheriff</div>
+          <a class="tel" href="tel:+18287332071">(828) 733-2071</a>
+          <div class="note">Non-emergency line. For crimes in progress, fire, or medical emergencies, call 911.</div>
+        </div>
+        <div class="contact">
+          <div class="name">Cannon Memorial Hospital — Emergency Dept.</div>
+          <a class="tel" href="tel:+18287377000">(828) 737-7000</a>
+          <div class="addr">434 Hospital Drive, Linville</div>
+          <div class="note">24-hour emergency department.</div>
+        </div>
+        <div class="contact">
+          <div class="name">Ballad Health Urgent Care</div>
+          <a class="tel" href="tel:+18287839183">(828) 783-9183</a>
+          <div class="addr">108 Park Avenue, Banner Elk</div>
+          <div class="note">Walk-ins welcome for minor illness and injury. Call for current hours.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-cabin"><span>Cabin Maintenance</span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-cabin" hidden>
+        <div class="contact">
+          <div class="name">Carolina Cabin Rentals</div>
+          <a class="tel" href="tel:+18282956000">(828) 295-6000</a>
+          <div class="note">Anything with the cabin itself — appliances, hot tub, heat, locks, or anything that doesn&rsquo;t seem right.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-vets"><span>Veterinarians</span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-vets" hidden>
+        <div class="contact">
+          <div class="name">Linville Animal Hospital</div>
+          <a class="tel" href="tel:+18288988900">(828) 898-8900</a>
+          <div class="addr">4004 NC-105, Banner Elk</div>
+          <div class="note">Well-regarded local practice. Weekdays 9&ndash;5.</div>
+        </div>
+        <div class="contact">
+          <div class="name">Animal Emergency Clinic of the High Country</div>
+          <a class="tel" href="tel:+18282682833">(828) 268-2833</a>
+          <div class="addr">1710 NC-105, Boone</div>
+          <div class="note">24-hour emergency vet care.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-poison"><span>Poison Control</span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-poison" hidden>
+        <div class="contact">
+          <div class="name">Poison Control Center</div>
+          <a class="tel" href="tel:+18002221222">1-800-222-1222</a>
+          <div class="note">Free, confidential, 24/7 — for people and pets.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-pharmacy"><span>Pharmacy</span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-pharmacy" hidden>
+        <div class="contact">
+          <div class="name">Banner Elk Pharmacy</div>
+          <a class="tel" href="tel:+18288984271">(828) 898-4271</a>
+          <div class="addr">110 Park Avenue, Banner Elk</div>
+          <div class="note">Mon&ndash;Fri 8:30&ndash;6, Sat 9&ndash;2, closed Sunday.</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+<div class="footer">Discover Serenity Summit · Banner Elk, NC</div>
+
+</div>
+
+<script>
+document.querySelectorAll('.acc-head').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    document.getElementById(btn.getAttribute('aria-controls')).hidden = open;
+  });
+});
+</script>
+
+</body>
+</html>
