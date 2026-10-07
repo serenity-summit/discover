@@ -18,8 +18,8 @@
 .contact a.tel{display:inline-block;margin-top:3px;font-weight:700;font-size:1.1rem;color:var(--green);text-decoration:none}
 .contact .addr{font-size:.9rem;color:#555;margin-top:2px}
 .contact .note{font-size:.9rem;color:#555;margin-top:4px;line-height:1.4}
-.alert-911{background:#fdf0ee;border-left:4px solid #a62f2f;border-radius:12px;padding:14px 16px;margin:0 0 14px;font-family:system-ui,sans-serif;line-height:1.45}
-.alert-911 a{color:#a62f2f;font-weight:700;text-decoration:none;font-size:1.1rem}
+a.alert-911{display:block;background:#fdf0ee;border-left:4px solid #a62f2f;border-radius:12px;padding:14px 16px;margin:0 0 14px;font-family:system-ui,sans-serif;line-height:1.45;color:inherit;text-decoration:none}
+.alert-911 strong{color:#a62f2f;font-size:1.1rem}
 </style>
 </head>
 <body>
@@ -39,7 +39,7 @@
 <main class="content">
   <p class="intro">Help When You Need It</p>
 
-  <div class="alert-911">In an emergency, call <a href="tel:911">911</a> first — then use the numbers below as needed.</div>
+  <a class="alert-911" href="tel:911">In an emergency, call <strong>911</strong> first — then use the numbers below as needed.</a>
 
   <div class="stack">
 
