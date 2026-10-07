@@ -1,12 +1,4 @@
 const sections=[...document.querySelectorAll('.guide-section')];
-const toc=document.getElementById('toc');
-sections.forEach(section=>{
-  const title=section.dataset.title;
-  const link=document.createElement('a');
-  link.href=`#${section.id}`;
-  link.textContent=title;
-  toc.appendChild(link);
-});
 function setExpanded(button,expanded){
   button.setAttribute('aria-expanded',String(expanded));
   const content=document.getElementById(button.getAttribute('aria-controls'));
@@ -26,13 +18,6 @@ document.querySelectorAll('.section-heading').forEach(button=>{
   button.addEventListener('click',()=>{
     if(button.getAttribute('aria-expanded')==='true'){setExpanded(button,false);}
     else{openOnly(button);}
-    resetExpandButton();
-  });
-});
-document.querySelectorAll('#toc a').forEach(link=>{
-  link.addEventListener('click',()=>{
-    const section=document.querySelector(link.getAttribute('href'));
-    openOnly(section.querySelector('.section-heading'));
     resetExpandButton();
   });
 });
