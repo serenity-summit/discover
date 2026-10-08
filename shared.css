@@ -6,7 +6,7 @@
   --gold:#c9891f;
 }
 *{box-sizing:border-box}
-body{
+body{-webkit-text-size-adjust:100%;text-size-adjust:100%;
   margin:0;
   font-family:Georgia,"Times New Roman",serif;
   color:var(--dark);
