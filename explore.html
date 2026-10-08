@@ -23,9 +23,12 @@
 .trips li:last-child{margin-bottom:0}
 .trips li strong{color:var(--green)}
 .search{margin:0 0 14px}
-.search input{width:100%;padding:14px 18px;border:1px solid rgba(0,0,0,.15);border-radius:20px;background:var(--cream);font-size:1rem;font-family:system-ui,sans-serif;color:var(--dark);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.search input{width:100%;padding:.8rem 1.1rem;border:1px solid #ccd6d0;border-radius:999px;background:#fff;font-size:1rem;font-family:system-ui,sans-serif;color:var(--dark)}
+.search input::placeholder{color:#a3ada9;opacity:1}
 .search input:focus{outline:2px solid var(--green);outline-offset:1px}
-.search-meta{font-size:.85rem;color:#66706b;font-family:system-ui,sans-serif;margin:8px 2px 0;min-height:1.2em}
+.search-row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;margin-top:6px}
+.text-button{border:0;background:transparent;color:var(--green);font-weight:700;cursor:pointer;padding:.55rem .2rem;font-size:.95rem;font-family:system-ui,sans-serif}
+.search-meta{font-size:.85rem;color:#66706b;font-family:system-ui,sans-serif;margin:0;text-align:right}
 .note-card{font-size:.9rem;line-height:1.5}
 .note-card strong{color:var(--green)}
 </style>
@@ -49,20 +52,25 @@
 <div class="fade" aria-hidden="true"></div>
 <main class="content">
   <p class="intro">
-    Explore the High Country
+    things to see and do
   </p>
 
   <div class="search">
-    <input type="search" id="explore-search" aria-label="Search places to explore" placeholder="Search waterfalls, towns, skiing&hellip;" autocomplete="off">
-    <p class="search-meta" id="search-meta" aria-live="polite"></p>
+    <input type="search" id="explore-search" aria-label="Search places to explore" placeholder="Search" autocomplete="off">
+    <div class="search-row">
+      <button id="expand-all" class="text-button" type="button">Expand all</button>
+      <p class="search-meta" id="search-meta" aria-live="polite"></p>
+    </div>
   </div>
 
   <div class="stack">
 
+    <!-- Quick-note card hidden 2026-10-08 per Trevor; restore when wanted.
     <div class="card note-card">
       <strong>A quick note before you set out.</strong>
       Hours, road access, and trail conditions change &mdash; the Blue Ridge Parkway has periodic closures, and some areas are still recovering from Helene. Confirm before you go.
     </div>
+    -->
 
     <section class="card acc">
       <button class="acc-head" aria-expanded="false" aria-controls="acc-sights"><span>Signature Sights &amp; Mountain Scenery <span class="count">(5)</span></span><span class="chev" aria-hidden="true"></span></button>
@@ -183,7 +191,26 @@ heads.forEach(function(btn){
       document.getElementById(btn.getAttribute('aria-controls')).hidden = false;
       scrollCardIntoView(btn);
     }
+    resetExpandButton();
   });
+});
+
+// Expand all / collapse all: toggles every currently visible section.
+var expandBtn = document.getElementById('expand-all');
+var allExpanded = false;
+function resetExpandButton(){
+  allExpanded = false;
+  expandBtn.textContent = 'Expand all';
+}
+expandBtn.addEventListener('click', function(){
+  allExpanded = !allExpanded;
+  sections.forEach(function(sec){
+    if (sec.style.display === 'none') return;
+    var head = sec.querySelector('.acc-head');
+    head.setAttribute('aria-expanded', String(allExpanded));
+    document.getElementById(head.getAttribute('aria-controls')).hidden = !allExpanded;
+  });
+  expandBtn.textContent = allExpanded ? 'Collapse all' : 'Expand all';
 });
 
 // Search: filter places across all sections; auto-open sections that contain matches.
@@ -203,6 +230,7 @@ function resetSearch(){
 searchInput.addEventListener('input', function(){
   var q = searchInput.value.trim().toLowerCase();
   if (!q){ resetSearch(); return; }
+  resetExpandButton();
   var total = 0;
   sections.forEach(function(sec){
     var hits = 0;

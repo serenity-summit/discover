@@ -32,7 +32,6 @@ expandButton.addEventListener('click',()=>{
   sections.filter(s=>!s.classList.contains('search-hidden')).forEach(s=>setExpanded(s.querySelector('.section-heading'),allExpanded));
   expandButton.textContent=allExpanded?'Collapse all':'Expand all';
 });
-document.getElementById('print-guide').addEventListener('click',()=>window.print());
 const search=document.getElementById('guide-search');
 const noResults=document.getElementById('no-results');
 search.addEventListener('input',()=>{
