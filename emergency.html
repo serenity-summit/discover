@@ -8,7 +8,8 @@
 <style>
 .card.acc{padding:0;overflow:hidden}
 .acc-head{width:100%;display:flex;justify-content:space-between;align-items:center;text-align:left;padding:18px;border:0;background:transparent;font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--green);cursor:pointer}
-.acc-head .chev{width:.65rem;height:.65rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;flex:none;margin-left:12px}
+.acc-head>span:first-child{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--green)}
+.acc-head .chev{color:var(--green);width:.65rem;height:.65rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;flex:none;margin-left:12px}
 .acc-head[aria-expanded="true"] .chev{transform:rotate(225deg)}
 .acc-body{padding:2px 18px 18px}
 .contact{padding:12px 0;border-top:1px solid rgba(0,0,0,.1);font-family:system-ui,sans-serif}
