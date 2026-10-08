@@ -8,6 +8,12 @@ function openOnly(button){
   document.querySelectorAll('.section-heading').forEach(b=>setExpanded(b,false));
   setExpanded(button,true);
 }
+function scrollSectionIntoView(button){
+  const section=button.closest('.guide-section');
+  const header=document.querySelector('.header');
+  const y=section.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight:0)-12;
+  window.scrollTo({top:y,behavior:'smooth'});
+}
 const expandButton=document.getElementById('expand-all');
 let allExpanded=false;
 function resetExpandButton(){
@@ -17,7 +23,7 @@ function resetExpandButton(){
 document.querySelectorAll('.section-heading').forEach(button=>{
   button.addEventListener('click',()=>{
     if(button.getAttribute('aria-expanded')==='true'){setExpanded(button,false);}
-    else{openOnly(button);}
+    else{openOnly(button);scrollSectionIntoView(button);}
     resetExpandButton();
   });
 });
