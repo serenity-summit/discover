@@ -127,7 +127,15 @@ document.querySelectorAll('.acc-head').forEach(function(btn){
     if (willOpen){
       btn.setAttribute('aria-expanded', 'true');
       document.getElementById(btn.getAttribute('aria-controls')).hidden = false;
+      scrollCardIntoView(btn);
     }
+function scrollCardIntoView(btn){
+  var card=btn.closest('.card');
+  var header=document.querySelector('.header');
+  var y=card.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight:0)-12;
+  window.scrollTo({top:y,behavior:'smooth'});
+}
+
   });
 });
 
