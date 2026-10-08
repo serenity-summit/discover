@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore the High Country | Serenity Summit</title>
+<link rel="stylesheet" href="shared.css?v=6">
+<style>
+.card.acc{padding:0;overflow:hidden}
+.acc-head{width:100%;display:flex;justify-content:space-between;align-items:center;text-align:left;padding:18px;border:0;background:transparent;font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--green);cursor:pointer}
+.acc-head>span:first-child{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--green)}
+.acc-head .count{font-weight:400;font-size:1rem;color:#66706b}
+.acc-head .chev{color:var(--green);width:.65rem;height:.65rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;flex:none;margin-left:12px}
+.acc-head[aria-expanded="true"] .chev{transform:rotate(225deg)}
+.acc-body{padding:2px 18px 18px}
+.acc-body p{margin:0 0 .6rem;line-height:1.45;font-size:.95rem}
+.poi{margin:0 0 .75rem;line-height:1.45;font-size:.95rem}
+.poi:last-child{margin-bottom:0}
+.poi strong{color:var(--green)}
+.fit{display:block;font-size:.85rem;color:#66706b;font-style:italic;margin-top:2px}
+.trips{margin:0;padding-left:1.4rem}
+.trips li{margin:0 0 .75rem;line-height:1.45;font-size:.95rem}
+.trips li:last-child{margin-bottom:0}
+.trips li strong{color:var(--green)}
+.search{margin:0 0 14px}
+.search input{width:100%;padding:14px 18px;border:1px solid rgba(0,0,0,.15);border-radius:20px;background:var(--cream);font-size:1rem;font-family:system-ui,sans-serif;color:var(--dark);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.search input:focus{outline:2px solid var(--green);outline-offset:1px}
+.search-meta{font-size:.85rem;color:#66706b;font-family:system-ui,sans-serif;margin:8px 2px 0;min-height:1.2em}
+.note-card{font-size:.9rem;line-height:1.5}
+.note-card strong{color:var(--green)}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="header">
+
+  <a class="back" href="./">‹ Home</a>
+
+  <a class="logo-link" href="./" aria-label="Serenity Summit home"><img class="logo"
+       src="images/Logo-Borderless-sm2.png"
+       alt="Serenity Summit"></a>
+
+  <img class="tagline-image"
+       src="images/Tagline.png"
+       alt="Escape • Unwind • Renew">
+
+</header>
+<div class="fade" aria-hidden="true"></div>
+<main class="content">
+  <p class="intro">
+    Explore the High Country
+  </p>
+
+  <div class="search">
+    <input type="search" id="explore-search" aria-label="Search places to explore" placeholder="Search waterfalls, towns, skiing&hellip;" autocomplete="off">
+    <p class="search-meta" id="search-meta" aria-live="polite"></p>
+  </div>
+
+  <div class="stack">
+
+    <div class="card note-card">
+      <strong>A quick note before you set out.</strong>
+      Hours, road access, and trail conditions change &mdash; the Blue Ridge Parkway has periodic closures, and some areas are still recovering from Helene. Confirm before you go.
+    </div>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-sights"><span>Signature Sights &amp; Mountain Scenery <span class="count">(5)</span></span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-sights" hidden>
+        <p class="poi"><strong>Grandfather Mountain</strong> &mdash; Cross the Mile High Swinging Bridge, take in expansive mountain views, and explore wildlife habitats and nature exhibits. One of the area&rsquo;s most recognizable attractions.<span class="fit">Best for: first-time visitors, families, photographers.</span></p>
+        <p class="poi"><strong>Blue Ridge Parkway &amp; Linn Cove Viaduct</strong> &mdash; A scenic drive with overlooks and mountain landscapes, including the famous viaduct wrapping around Grandfather Mountain. Check current road closures rather than assuming the full route is open.<span class="fit">Best for: scenic drives, photography, fall foliage.</span></p>
+        <p class="poi"><strong>The Blowing Rock</strong> &mdash; The namesake cliff attraction, with mountain views and short walks through the grounds. Pairs well with time in downtown Blowing Rock.<span class="fit">Best for: couples, families, scenery without a long hike.</span></p>
+        <p class="poi"><strong>Moses H. Cone Memorial Park</strong> &mdash; A historic estate with lake scenery and an extensive carriage-trail network. A good alternative to a rugged mountain hike.<span class="fit">Best for: leisurely walks, history, a relaxed outdoor afternoon.</span></p>
+        <p class="poi"><strong>Julian Price Memorial Park &amp; Price Lake</strong> &mdash; Lakeside scenery, walking, and picnic spots along the Parkway.<span class="fit">Best for: families, nature lovers, quieter outings.</span></p>
+      </div>
+    </section>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-hiking"><span>Hiking, Waterfalls &amp; Outdoor Adventure <span class="count">(9)</span></span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-hiking" hidden>
+        <p class="poi"><strong>Rough Ridge</strong> &mdash; A popular mountain-view hike near the Parkway, often counted among the area&rsquo;s standout hikes.<span class="fit">Best for: active visitors and photographers.</span></p>
+        <p class="poi"><strong>Linville Falls</strong> &mdash; One of the region&rsquo;s signature waterfalls, with different hiking routes and viewpoints.<span class="fit">Best for: waterfall enthusiasts, hikers, photography.</span></p>
+        <p class="poi"><strong>Otter Falls</strong> &mdash; A waterfall outing in Seven Devils, convenient to the Banner Elk area.<span class="fit">Best for: a waterfall-focused excursion.</span></p>
+        <p class="poi"><strong>Elk River Falls</strong> &mdash; An impressive 50-foot waterfall near Elk Park; the approach includes steep steps. Treat it as a waterfall-viewing outing rather than a swimming spot.<span class="fit">Best for: waterfall photography, a shorter excursion.</span></p>
+        <p class="poi"><strong>Elk Knob State Park</strong> &mdash; A hiking destination near Boone, beyond the Parkway corridor.<span class="fit">Best for: visitors whose priority is hiking.</span></p>
+        <p class="poi"><strong>Boone Greenway</strong> &mdash; A convenient outdoor walk without committing to a mountain trail.<span class="fit">Best for: families and gentler outings.</span></p>
+        <p class="poi"><strong>Rocky Knob Mountain Bike Park</strong> &mdash; A dedicated mountain-biking destination near Boone.<span class="fit">Best for: mountain bikers and active travelers.</span></p>
+        <p class="poi"><strong>Guided Whitewater Rafting</strong> &mdash; An organized adventure; area outfitters offer trips suited to a range of visitors.<span class="fit">Best for: adventure-seeking families and groups.</span></p>
+        <p class="poi"><strong>New River Paddling</strong> &mdash; A river outing around New River State Park &mdash; a different side of the High Country.<span class="fit">Best for: paddling and a water-based day trip.</span></p>
+      </div>
+    </section>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-family"><span>Family Attractions &amp; Hands-On Experiences <span class="count">(8)</span></span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-family" hidden>
+        <p class="poi"><strong>Tweetsie Railroad</strong> &mdash; A classic Wild West-themed attraction and one of the region&rsquo;s best-known family destinations.<span class="fit">Check the operating calendar and special-event schedule.</span></p>
+        <p class="poi"><strong>Wilderness Run Alpine Coaster</strong> &mdash; A mountain coaster near Banner Elk &mdash; a memorable thrill without taking up the whole day.<span class="fit">Check reservation requirements and rider restrictions.</span></p>
+        <p class="poi"><strong>Wilderness Run Adventure Course</strong> &mdash; An adventure course that pairs well with the coaster visit.<span class="fit">Confirm operating dates and participation requirements.</span></p>
+        <p class="poi"><strong>Apple Hill Farm</strong> &mdash; Guided visits to meet alpacas, llamas, and other farm animals &mdash; a distinctive stop beyond the usual sightseeing.<span class="fit">Plan around scheduled tours.</span></p>
+        <p class="poi"><strong>Sugar Creek Gem Mine</strong> &mdash; A hands-on gem-mining stop in the Banner Elk area.<span class="fit">A good fit for a family-oriented itinerary.</span></p>
+        <p class="poi"><strong>Mystery Hill</strong> &mdash; A longstanding attraction along the Boone&ndash;Blowing Rock corridor.<span class="fit">Check the available experiences before choosing tickets.</span></p>
+        <p class="poi"><strong>Wildcat Lake</strong> &mdash; A small lake near Banner Elk with paddling and fishing opportunities.<span class="fit">Confirm current access, amenities, and rental availability.</span></p>
+        <p class="poi"><strong>Tate-Evans Park</strong> &mdash; A convenient town-park stop alongside a visit to downtown Banner Elk.<span class="fit">Note: the park has undergone post-Helene rebuilding &mdash; check current conditions.</span></p>
+      </div>
+    </section>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-winter"><span>Winter Sports &amp; Seasonal Mountain Fun <span class="count">(4)</span></span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-winter" hidden>
+        <p class="poi"><strong>Sugar Mountain Resort</strong> &mdash; A principal skiing and snowboarding destination, convenient to Banner Elk.</p>
+        <p class="poi"><strong>Beech Mountain Resort</strong> &mdash; A signature winter-sports destination; the mountain also offers warm-season hiking and mountain biking.</p>
+        <p class="poi"><strong>Appalachian Ski Mtn.</strong> &mdash; A winter-sports option in the Boone&ndash;Blowing Rock area.</p>
+        <p class="poi"><strong>Hawksnest</strong> &mdash; Snow tubing and zipline experiences &mdash; mountain adventure beyond skiing.<span class="fit">Check which activities are offered during your visit.</span></p>
+      </div>
+    </section>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-towns"><span>Small Towns, Shopping, Food &amp; Relaxed Afternoons <span class="count">(8)</span></span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-towns" hidden>
+        <p class="poi"><strong>Downtown Banner Elk</strong> &mdash; Combine a meal with a stroll through town; the dining scene is a notable part of Banner Elk&rsquo;s appeal.</p>
+        <p class="poi"><strong>Downtown Boone &amp; King Street</strong> &mdash; Shopping, restaurants, and local breweries &mdash; a useful change of pace from outdoor sightseeing.</p>
+        <p class="poi"><strong>Downtown Blowing Rock</strong> &mdash; Shops, galleries, and restaurants in a scenic High Country day trip.</p>
+        <p class="poi"><strong>Valle Crucis &amp; the Original Mast General Store</strong> &mdash; A classic stop for small-town character and a historic general-store experience.</p>
+        <p class="poi"><strong>Grandfather Vineyard &amp; Winery</strong> &mdash; A wine-tasting option in the Banner Elk&ndash;Boone area.</p>
+        <p class="poi"><strong>Banner Elk Winery</strong> &mdash; Close to Banner Elk, and the first winery established in the Banner Elk&ndash;Boone area.</p>
+        <p class="poi"><strong>Boone Farmers Market</strong> &mdash; A seasonal way to experience local food and community rather than only the major attractions.</p>
+        <p class="poi"><strong>Boone Golf Club</strong> &mdash; A public golf option to round out the activity list for a day on the course.</p>
+      </div>
+    </section>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-history"><span>Local History, Culture &amp; Seasonal Events <span class="count">(5)</span></span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-history" hidden>
+        <p class="poi"><strong>Banner House Museum</strong> &mdash; Local history and 19th-century life in Banner Elk.<span class="fit">Tour season is limited &mdash; confirm dates before planning around it.</span></p>
+        <p class="poi"><strong>Hickory Ridge Living History Museum &amp; Horn in the West</strong> &mdash; Regional history and outdoor theater.<span class="fit">Check their respective schedules.</span></p>
+        <p class="poi"><strong>Woolly Worm Festival</strong> &mdash; A distinctive Banner Elk fall tradition built on mountain folklore and woolly bear caterpillars.</p>
+        <p class="poi"><strong>Choose-and-Cut Christmas Tree Farms</strong> &mdash; A memorable seasonal outing for late-fall and holiday visitors.</p>
+        <p class="poi"><strong>Fall Foliage Drives</strong> &mdash; A signature seasonal experience combining mountain scenery with stops in nearby towns.</p>
+      </div>
+    </section>
+
+    <section class="card acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc-trips"><span>Suggested Day Trips <span class="count">(5)</span></span><span class="chev" aria-hidden="true"></span></button>
+      <div class="acc-body" id="acc-trips" hidden>
+        <ol class="trips">
+          <li class="poi trip"><strong>Banner Elk family outing</strong> &mdash; Wilderness Run Alpine Coaster, Sugar Creek Gem Mine, and a meal downtown.</li>
+          <li class="poi trip"><strong>Scenic mountain day</strong> &mdash; Grandfather Mountain, then accessible portions of the Parkway and Price Lake. Check road conditions when choosing the route.</li>
+          <li class="poi trip"><strong>Boone &amp; Blowing Rock day</strong> &mdash; King Street shopping and lunch, then downtown Blowing Rock and either Moses Cone Memorial Park or The Blowing Rock.</li>
+          <li class="poi trip"><strong>Relaxed countryside outing</strong> &mdash; Valle Crucis, the original Mast General Store, and a scheduled tour at Apple Hill Farm.</li>
+          <li class="poi trip"><strong>Active outdoor day</strong> &mdash; Pick one main hike or waterfall &mdash; Rough Ridge, Linville Falls, or Otter Falls &mdash; rather than trying to fit in several.</li>
+        </ol>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+<div class="footer">Discover Serenity Summit · Banner Elk, NC</div>
+
+</div>
+
+<script>
+// Accordion: exclusive open, all start collapsed; expanding scrolls the card just below the sticky header.
+var heads = Array.prototype.slice.call(document.querySelectorAll('.acc-head'));
+function closeAll(){
+  heads.forEach(function(b){
+    b.setAttribute('aria-expanded', 'false');
+    document.getElementById(b.getAttribute('aria-controls')).hidden = true;
+  });
+}
+function scrollCardIntoView(btn){
+  var card = btn.closest('.card');
+  var header = document.querySelector('.header');
+  var y = card.getBoundingClientRect().top + window.scrollY - (header ? header.offsetHeight : 0) - 12;
+  window.scrollTo({top: y, behavior: 'smooth'});
+}
+heads.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var willOpen = btn.getAttribute('aria-expanded') !== 'true';
+    closeAll();
+    if (willOpen){
+      btn.setAttribute('aria-expanded', 'true');
+      document.getElementById(btn.getAttribute('aria-controls')).hidden = false;
+      scrollCardIntoView(btn);
+    }
+  });
+});
+
+// Search: filter places across all sections; auto-open sections that contain matches.
+var searchInput = document.getElementById('explore-search');
+var searchMeta = document.getElementById('search-meta');
+var sections = Array.prototype.slice.call(document.querySelectorAll('section.card.acc'));
+var placeCount = document.querySelectorAll('.poi:not(.trip)').length;
+var tripCount = document.querySelectorAll('.poi.trip').length;
+function resetSearch(){
+  sections.forEach(function(sec){
+    sec.style.display = '';
+    Array.prototype.forEach.call(sec.querySelectorAll('.poi'), function(p){ p.style.display = ''; });
+  });
+  closeAll();
+  searchMeta.textContent = placeCount + ' places \u00B7 ' + tripCount + ' day-trip ideas';
+}
+searchInput.addEventListener('input', function(){
+  var q = searchInput.value.trim().toLowerCase();
+  if (!q){ resetSearch(); return; }
+  var total = 0;
+  sections.forEach(function(sec){
+    var hits = 0;
+    Array.prototype.forEach.call(sec.querySelectorAll('.poi'), function(p){
+      var match = p.textContent.toLowerCase().indexOf(q) !== -1;
+      p.style.display = match ? '' : 'none';
+      if (match) hits++;
+    });
+    total += hits;
+    var head = sec.querySelector('.acc-head');
+    var body = document.getElementById(head.getAttribute('aria-controls'));
+    if (hits > 0){
+      sec.style.display = '';
+      head.setAttribute('aria-expanded', 'true');
+      body.hidden = false;
+    } else {
+      sec.style.display = 'none';
+      head.setAttribute('aria-expanded', 'false');
+      body.hidden = true;
+    }
+  });
+  searchMeta.textContent = total === 0
+    ? 'No matches for \u201C' + searchInput.value.trim() + '\u201D'
+    : total + (total === 1 ? ' match' : ' matches');
+});
+resetSearch();
+</script>
+
+</body>
+</html>
